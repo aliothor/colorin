@@ -1,9 +1,9 @@
-type Options = {
-  width: number;
-  height: number;
-};
+export type Options = {
+  width: number
+  height: number
+}
 
-type ColorArrayItem = [value: number, color: string];
+export type ColorArrayItem = [value: number, color: string]
 
 /**
  * 颜色插值类
@@ -17,28 +17,23 @@ type ColorArrayItem = [value: number, color: string];
     const [r, g, b, a] = ci.getColor(1000);
  */
 export class ColorIn {
-  constructor(colors: ColorArrayItem[], options?: Options);
+  constructor(colors: ColorArrayItem[], options?: Options)
   /**
    * get color by stop
    * @param stop
    * @returns 颜色数组 [R,G,B,A]
    */
-  getColor(stop: number): [number, number, number, number];
+  getColor(stop: number): [number, number, number, number]
   /**
    * get canvas image data
    */
-  getImageData(): ImageData;
+  getImageData(): ImageData
 }
 
-type CanvasInstanceLike = {
-  width: number;
-  height: number;
-  getContext(
-    contextType: "2d",
-    contextAttributes?: CanvasRenderingContext2DSettings
-  ): CanvasRenderingContext2D | any;
-};
+export type CanvasInstanceLike = {
+  width: number
+  height: number
+  getContext(contextType: '2d', contextAttributes?: CanvasRenderingContext2DSettings): CanvasRenderingContext2D | any
+}
 
-export function registerCanvas<T extends CanvasInstanceLike>(
-  canvasInstance: T
-): void;
+export function registerCanvas<T extends CanvasInstanceLike>(canvasInstance: T): void
